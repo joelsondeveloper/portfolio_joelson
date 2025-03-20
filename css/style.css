@@ -19,9 +19,9 @@ body::before {
   right: 0;
   bottom: 0;
   background-image: url(../img/joelson.png);
-  background-size: contain;
+  background-size: auto 50%;
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: right top;
   animation: joelson 0.6s linear forwards;
   opacity: 1;
   z-index: -1;
@@ -34,19 +34,30 @@ h3 {
 }
 
 .title-main {
+  display: inline-block;
+  width: fit-content;
   font-size: 48px;
   margin: 0 4rem;
   opacity: 1;
   animation: spawning 0.6s 1.6s linear both;
+  border-bottom: 4px solid transparent;
+  transition: border-bottom .5s;
+}
+
+.title-main:hover{
+  border-bottom-color: #333;
 }
 
 .main-main {
   width: 50%;
 }
 
-#section1 {
+.sections{
   height: 100vh;
   width: 100%;
+}
+
+#section1 {
   background-image: url(../img/corte_joelson.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -99,6 +110,8 @@ h3 {
 .text_nav {
   /* display: inline-block; */
   font-size: 6rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   color: inherit;
   text-decoration: none;
   height: 6rem;
@@ -108,7 +121,7 @@ h3 {
   position: relative;
 }
 
-.text_nav::after {
+.piscar::after {
   content: "";
   display: inline-block;
   width: 4px;
@@ -119,9 +132,11 @@ h3 {
   animation: piscar 1s steps(2) infinite both;
 }
 
-.text_nav:hover::after {
+.piscar:hover::after {
   background-color: #333;
 }
+
+/* animação de foco maquina de escrever */
 
 @keyframes piscar {
   0% {
@@ -129,5 +144,25 @@ h3 {
   }
   100% {
     opacity: 100%;
+  }
+}
+
+.headline{
+  font-size: 2.6rem;
+  /* font-weight: 600; */
+  margin-top: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  filter: blur(10px);
+  animation: pixel-clear 2s 2s forwards, spawning 0.6s 1.9s linear both;
+}
+
+/* animação de pixelated */
+
+@keyframes pixel-clear {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0);
   }
 }
