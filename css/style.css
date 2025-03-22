@@ -4,11 +4,16 @@
   box-sizing: border-box;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   position: relative;
   font-family: "Roboto", sans-serif;
   color: #333;
+  overflow-x: hidden;
 }
 
 body::before {
@@ -19,7 +24,7 @@ body::before {
   right: 0;
   bottom: 0;
   background-image: url(../img/joelson.png);
-  background-size: auto 50%;
+  background-size: auto 25%;
   background-repeat: no-repeat;
   background-position: right top;
   animation: joelson 0.6s linear forwards;
@@ -63,6 +68,11 @@ h3 {
   background-repeat: no-repeat;
   background-position: 100%;
   animation: corte_joelson 0.8s 0.9s ease-in-out both;
+}
+
+.transition{
+  height: 50vh;
+  width: 100%;
 }
 
 /* animações da section 1 */
@@ -164,5 +174,150 @@ h3 {
   }
   100% {
     filter: blur(0);
+  }
+}
+
+/* section2 */
+
+.transition1{
+  background: radial-gradient(ellipse 100% 70% at 50% 100%,#4B2C20 55%, white 35%);
+}
+
+.section2{
+  background: linear-gradient( #4B2C20 , #2C1A14);
+  color: #E6D5B8;
+  /* border-top: 2px solid #2C1A14; */
+}
+
+.h2-section2{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 5px rgba(255, 200, 150, 0.5);
+  text-align: center;
+  
+
+}
+
+.sobre{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  /* height: 100%; */
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.sobre img{
+  animation: ondas 5s ease-in-out infinite both;
+}
+
+.p-sobre {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  width: 45%;
+}
+
+@keyframes ondas {
+  0%, 100% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* section3 */
+
+.transition2{
+  background:radial-gradient(ellipse 100% 70% at 50% 100%, #0f0e0d 55%, #2C1A14 35%);
+}
+
+.section3{
+  background: linear-gradient( #0f0e0d , #110d11);
+  color: #E6D5B8;
+  /* border-top: 2px solid #1A141A; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.fa-brands {
+  position: absolute;
+  top: -100px; /* Inicia fora da tela */
+  opacity: 0;
+  color: #00ff00;
+  font-size: 3.125rem;
+  cursor: pointer;
+  transition: scale 0.5s;
+}
+
+.fa-brands:hover{
+  scale: 1.5;
+}
+
+.terminal .p-interative{
+  cursor: pointer;
+}
+
+.terminal .p-interative:focus {
+  outline: 2px solid #00ff00;
+}
+
+.terminal{
+  background-color: transparent; /* Preto fosco */
+  backdrop-filter: blur(25px);
+  color: #00ff00; /* Verde neon */
+  font-family: "Courier New", Courier, monospace;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  z-index: 1;
+}
+
+.terminal-marginTop{
+  margin-top: 1rem;
+}
+
+.letra-piscar{
+  animation: terminal-piscar 1s infinite steps(2);
+}
+
+/* letra do terminal piscando */
+@keyframes terminal-piscar {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.matrix-container {
+  position: absolute;
+  color: #0f0;
+  font-family: monospace;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.matrix-letter {
+  position: absolute;
+  opacity: 0.8;
+  animation: fall 1.8s linear forwards;
+  top: -3.225rem;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px);
+    opacity: 0;
   }
 }

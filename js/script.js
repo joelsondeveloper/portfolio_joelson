@@ -1,9 +1,9 @@
 const texts = {
     default: 'I\'m', // texto inicial do primeiro
-    hover: 'Sobre mim',  // texto ao passar o mouse no primeiro
+    hover: 'Sobre',  // texto ao passar o mouse no primeiro
     default2: 'Joelson', // texto inicial do segundo
     hover2: 'Projetos',  // texto ao passar o mouse no segundo
-    default3: 'Developer', // texto inicial do terceiro
+    default3: 'developer', // texto inicial do terceiro
     hover3: 'Contatos'  // texto ao passar o mouse no terceiro
   };
   
