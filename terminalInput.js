@@ -62,6 +62,11 @@ function appendToTerminal(text) {
   terminalOutput.appendChild(newLine);
 }
 
+function scrollToBottom() {
+  // Evita rolar para baixo quando a página é carregada pela primeira vez
+  terminalOutput.scrollTop = terminalOutput.scrollHeight;
+}
+
 terminalInput.addEventListener("keypress", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
@@ -75,4 +80,6 @@ function updateCursor() {
   terminalInput.focus(); // Mantém o input sempre focado
 }
 
-
+document.addEventListener("click", () => {
+  terminalInput.focus();
+});
